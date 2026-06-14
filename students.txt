@@ -1,0 +1,9 @@
+roll,name,dept,cgpa,status
+BSAI-23-001,Ali Hassan,AI,3.45,active
+BSAI-23-002,Sara Ahmed,AI,3.78,active
+BSAI-23-003,Bilal Khan,AI,2.95,active
+BSAI-23-004,Ayesha Tariq,AI,3.20,active
+BSAI-23-005,Usman Malik,AI,2.50,inactive
+BSAI-23-006,Hira Shah,AI,3.90,active
+BSAI-23-007,Fahad Iqbal,AI,3.10,active
+BSAI-23-008,Zainab Riaz,AI,2.80,active
