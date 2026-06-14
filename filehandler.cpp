@@ -41,3 +41,45 @@ string formatField(string field) {
     }
     return field;
 }
+
+vector<vector<string>> readTXT(string filename) {
+    vector<vector<string>> data;
+    ifstream file(filename);
+
+    if (!file.is_open()) {
+        cout << "Error: could not open " << filename << endl;
+        return data;
+    }
+
+    string line;
+    getline(file, line); // skip header row
+
+    while (getline(file, line)) {
+        if (line.length() == 0) continue;
+        vector<string> row = parseLine(line);
+        data.push_back(row);
+    }
+
+    file.close();
+    return data;
+}
+
+void writeTXT(string filename, vector<string> header, vector<vector<string>> rows) {
+    ofstream file(filename); // opening like this overwrites the file
+
+    for (int i = 0; i < header.size(); i++) {
+        file << formatField(header[i]);
+        if (i != header.size() - 1) file << ",";
+    }
+    file << endl;
+
+    for (int i = 0; i < rows.size(); i++) {
+        for (int j = 0; j < rows[i].size(); j++) {
+            file << formatField(rows[i][j]);
+            if (j != rows[i].size() - 1) file << ",";
+        }
+        file << endl;
+    }
+
+    file.close();
+}
